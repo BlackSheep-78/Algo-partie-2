@@ -50,17 +50,17 @@
         let result = 0;
 
 
-        if(currency == 'eur')
+        if(currency == 'usd')
         {
             ratio = 1.079;
-            baseCurrency = 'USD';
-            currency = 'EUR';
+            baseCurrency = 'EUR';
+            currency = 'USD';
         }
         else if(currency == 'eur')
         {
             ratio = 0.932;
-            baseCurrency = 'EUR';
-            currency = 'USD';
+            baseCurrency = 'USD';
+            currency = 'EUR';
         }
 
         if(!(value > 0))
