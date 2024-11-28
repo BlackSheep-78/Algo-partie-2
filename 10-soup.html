@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exo d'Algo - Soup !</title>
+    <title>10 Exo d'Algo - Soup !</title>
     <link href="./bootstrap.min.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
 </head>
@@ -61,21 +61,74 @@
 </div>
 
 <script type="text/javascript">
-    function doYouLikeIt() {
-        // CODE HERE !
+
+
+
+    function doYouLikeIt() 
+    {
+        let MESSAGE = "J'ai faim !!!!";
+
+        switch(true)
+        {
+            case isPoisoned() :
+                MESSAGE = "Game over...";
+            break;
+
+            case isSalty() && isSweet() :
+                MESSAGE = "Beurk... c'est pas bon !";
+            break;
+
+            case isSalty() :
+                MESSAGE = "Hum la bonne sou-soupe salée !";
+            break;
+
+            case isSweet() :
+                MESSAGE = "Hum la bonne sou-soupe sucrée !";
+            break;
+        }
+
+        alert(MESSAGE);
+
     }
 
-    function isSalty() {
-        let carrots = document.getElementById("carrots").checked;
-        // CODE HERE !
+    function isSalty() 
+    {
+        let carrots  = document.getElementById("carrots").checked;
+        let tomatoes = document.getElementById("tomatoes").checked;
+        let potatoes = document.getElementById("potatoes").checked;
+
+        if(carrots || tomatoes || potatoes)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    function isSweet() {
-        // CODE HERE !
+    function isSweet() 
+    {
+        let black_chocolate = document.getElementById("black-chocolate").checked;
+        let white_chocolate = document.getElementById("white-chocolate").checked;
+
+        if(black_chocolate || white_chocolate)
+        {
+            return true;
+        }
+
+        return false;
     }
 
-    function isPoisoned() {
-        // CODE HERE !
+    function isPoisoned() 
+    {
+        let cyanide = document.getElementById("cyanide").checked;
+        let vitriol = document.getElementById("vitriol").checked;
+
+        if(cyanide || vitriol)
+        {
+            return true;
+        }
+
+        return false;
     }
 </script>
 </body>

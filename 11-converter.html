@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exo d'Algo - Converter !</title>
+    <title>11 Exo d'Algo - Converter !</title>
     <link href="./bootstrap.min.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
 </head>
@@ -31,14 +30,53 @@
     </select>
 
     <br/>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" onclick="convert()">
         Connaître la valeur en USD->EUR ou EUR->USD
     </button>
 </div>
 
 <script type="text/javascript">
-    // 1 EUR = 1.0729 USD
-    // CODE HERE !
+
+    function convert()
+    {
+        console.log("convert()");
+
+        let value = document.getElementById("value").value;
+        let currencies = document.getElementById("currencies");
+        let currency = currencies.options[currencies.selectedIndex].value;
+        let baseCurrency = "";
+        let ratio = 0;
+        let message = "";
+        let result = 0;
+
+
+        if(currency == 'eur')
+        {
+            ratio = 1.079;
+            baseCurrency = 'USD';
+            currency = 'EUR';
+        }
+        else if(currency == 'eur')
+        {
+            ratio = 0.932;
+            baseCurrency = 'EUR';
+            currency = 'USD';
+        }
+
+        if(!(value > 0))
+        {
+            message = "Please insert a value.";
+        }
+        else
+        {
+            result = value * ratio;
+
+            message = value + " " + baseCurrency + " -> " + result + " " + currency;
+        }
+
+        alert(message);
+    }
+
 </script>
 </body>
 </html>

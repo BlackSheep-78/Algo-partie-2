@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exo d'Algo - Even / Odd !</title>
+    <title>05 Exo d'Algo - Even / Odd !</title>
     <link href="./bootstrap.min.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
 </head>
@@ -38,6 +38,17 @@
         // AIDE : regarder du côté des modulos en javascript
 
         let number = document.getElementById("number").value;
+
+        number = parseInt(number);
+
+        if(((number/2).toFixed() * 2 ) == number )
+        {
+            alert("n est pair");
+        }
+        else
+        {
+            alert("n est impair");
+        }
 
         // CODE HERE !
     }
